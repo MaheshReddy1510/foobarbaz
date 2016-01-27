@@ -1,71 +1,82 @@
 import java.util.*;
+import java.io.*;
 public class foobarbaz {
-	public static void main(String[] args) {
-	
-		int k;
-		int x=0;
-		String input;
-		while(true){
-			{
-		}
+	public static void main(String[] args)
+{
+		PrintWriter writer=null;
 		try{
+			writer=new PrintWriter(new FileWriter("FooBarBaz.txt"));
+		}
+		catch(IOException e1){
+			e1.printStackTrace();
+		}
+	  int y=0;
+		
+		while(true)
+			{
+				int k=0;
+				String x;
 			System.out.println("Enter your number:");
-			Scanner in=new Scanner(System.in);
+			Scanner sc=new Scanner(System.in);
+			try
+			{
+				x=sc.next();
 			
-			input=in.next();
 	
-		if(input.equals("stop"))
+		        if(x.equals("stop"))
 				{
 			break;
 		
 				}
 		else
 		{
-			x=Integer.parseInt(input);
+			y=Integer.parseInt(x);
 		}
 		}catch(Exception e){
 			System.out.println("invalid input");
 		}
-		for(k=1;k<=x;k++)
+		for(k=1;k<=y;k++)
 		{
 		if(k%3==0&& k%5==0 && k%7==0)
 		{
-			System.out.println("Foo Bar Baz");
+			writer.println("Foo Bar Baz");
 		}
 		else if(k%3==0&& k%5==0)
 		{
-			System.out.println("Foo Bar");
+			writer.println("Foo Bar");
 		}
 		else if(k%3==0 && k%7==0)
 		{
-			System.out.println("Foo Baz");
+			writer.println("Foo Baz");
 		}
 		else if(k%5==0 && k%7==0)
 		{
-			System.out.println("Bar Baz");
+			writer.println("Bar Baz");
 		}
 		
 		else if(k%3==0)
 		{
-			System.out.println("Foo");
+			writer.println("Foo");
 		}
 		
 		else if(k%5==0)
 		{
-			System.out.println("Bar");
+			writer.println("Bar");
 		}
 		
 		else if(k%7==0)
 		{
-			System.out.println("Baz");
+			writer.println("Baz");
 		}
 		else
 		{
-			System.out.println(k);
+			writer.println(k);
 		}
 		}
 		
 	}	
-	
+	 writer.close();
 	}
 }
+
+		
