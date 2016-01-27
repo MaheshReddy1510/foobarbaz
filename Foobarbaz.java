@@ -1,17 +1,29 @@
 import java.util.*;
-
 public class foobarbaz {
 	public static void main(String[] args) {
 	
 		int k;
 		int x=0;
+		String input;
+		while(true){
+			{
+		}
 		try{
 			System.out.println("Enter your number:");
 			Scanner in=new Scanner(System.in);
-		x=in.nextInt();
-
+			
+			input=in.next();
+	
+		if(input.equals("stop"))
+				{
+			break;
+		
+				}
+		else
+		{
+			x=Integer.parseInt(input);
 		}
-		catch(Exception e){
+		}catch(Exception e){
 			System.out.println("invalid input");
 		}
 		for(k=1;k<=x;k++)
@@ -54,5 +66,6 @@ public class foobarbaz {
 		}
 		
 	}	
-
+	
+	}
 }
